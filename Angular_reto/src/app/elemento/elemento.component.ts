@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { datosservice } from './datos.service';
+import { ObsService } from '../obs.service';
 
 @Component({
   selector: 'app-elemento',
@@ -8,7 +9,7 @@ import { datosservice } from './datos.service';
 })
 export class ElementoComponent implements OnInit {
   listaDePost : any;
-  constructor(private postservice: datosservice) { }
+  constructor(private postservice: datosservice,  private observice : ObsService) { }
 
   ngOnInit() {
     this.postservice.getDatos().subscribe(response => {
@@ -18,4 +19,7 @@ export class ElementoComponent implements OnInit {
     });
   }
 
+  editarAnimal(id){
+    this.observice.mostrarAnimal(this.listaDePost[id])
+  }
 }

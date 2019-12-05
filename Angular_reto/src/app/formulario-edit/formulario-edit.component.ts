@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { datosservice } from './../elemento/datos.service';
+import { Animal } from '../Animal.models';
+import { ObsService } from './../obs.service';
 
 @Component({
   selector: 'app-formulario-edit',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioEditComponent implements OnInit {
 
-  constructor() { }
+  data: Animal
+  constructor( private observice : ObsService){}
 
-  ngOnInit() {
+  ngOnInit(){
+    this.observice.datoanimal$.subscribe(res =>{
+      this.data = res
+    }, error =>{
+      console.log('Error',error)
+    })
   }
 
+
+
+
+  /*listaDePost : any;
+  constructor(private postservice: datosservice) { }
+
+  ngOnInit() {
+    this.postservice.getDatos().subscribe(response => {
+      this.listaDePost = response;
+      console.log(this.postservice);
+      
+    });
+  
+  }
+*/
 }

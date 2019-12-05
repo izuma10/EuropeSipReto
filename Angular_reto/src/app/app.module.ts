@@ -7,7 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ElementoComponent } from './elemento/elemento.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { FormularioNewComponent } from './formulario-new/formulario-new.component';
+import { datosservice } from './datos.service';
+import { FormsModule } from '@angular/forms'
 const routes : Routes = [
   {
     path: '', redirectTo :'home', pathMatch: 'full'
@@ -17,6 +19,9 @@ const routes : Routes = [
   },
   {
     path: 'formulario/:id', component: FormularioEditComponent
+  },
+  {
+    path:'formularionew', component: FormularioNewComponent
   }
 ]
 
@@ -26,15 +31,17 @@ const routes : Routes = [
     AppComponent,
     FormularioEditComponent,
     ElementoComponent,
-    HomeComponent
+    HomeComponent,
+    FormularioNewComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  providers: [datosservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
+
 <div *ngFor="let dato of listaDePost" class="container">
     <div>
         <img src = "{{ dato.image }}" class="fotos">
         <div class="botones">
-            <button class="bizq">Edit word</button>
+            <button class="bizq" [routerLink]="['/formulario',dato.es.name]" (click)="editarAnimal(dato.id)">Edit word</button>
             <button class="bdrch">Delete word</button>
         </div>
     </div>
