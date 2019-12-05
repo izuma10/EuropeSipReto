@@ -1,0 +1,19 @@
+<div *ngFor="let dato of listaDePost" class="container">
+    <div>
+        <img src = "{{ dato.image }}" class="fotos">
+        <div class="botones">
+            <button class="bizq">Edit word</button>
+            <button class="bdrch">Delete word</button>
+        </div>
+    </div>
+    <div class="textos">
+        <h1>In Spanish</h1>
+        <p><strong>Name:</strong> {{dato.es.name}}</p>
+        <p><strong>Definition:</strong> {{dato.es.definition}}</p>
+        
+        <h1>In English</h1>
+        <p><strong>Name:</strong> {{dato.en.name}}</p>
+        <p><strong>Definition:</strong> {{dato.en.definition}}</p>
+    </div>
+
+</div>
