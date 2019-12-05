@@ -1,1 +1,112 @@
-<p>formulario-new works nuevooooo!</p>
+<div>
+    <h1>
+        Crearte new word
+    </h1>
+    <form [formGroup]="animalForm" (ngSubmit)="onSubmit()" >
+        <div>
+            <label >
+                Url image:
+            <input formControlName="image" type="text" id="image">
+            </label>
+        </div>
+        <div>
+            <div>
+                <label >
+                    Name:
+                <input formControlName="esname" type="text" id="es.name">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Description:
+                <input formControlName="esdescription" type="text" id="esdescription">
+                </label>
+            </div>
+        </div>
+        <div>
+            <label>
+                Name:
+            <input formControlName="enname" type="text" id="esname">
+            </label>
+        </div>
+        <div>
+            <label>
+                    Description:
+            <input formControlName="endescription" type="text" id="esdescription">
+            </label>
+        </div>
+        <div>
+            <button click="postAnimales" type="submit" [disabled]="!profileForm.valid">Submit</button>
+        </div>
+          </form>
+
+    
+<!-- <form #animalForm="ngForm" (ngSubmit)="onSubmit(animalForm)">
+    {{ animalForm.value | json }}
+    <div>
+            <label for="image">Url image:</label>
+            <input ngModel name="image" type="text" id="esname">
+        </div>
+    <div>
+        <label for="esname">Name:</label>
+        <input ngModel name="esname" type="text" id="esname">
+    </div>
+    <div>
+        <label for="esdespription">Description</label>
+        <input ngModel name="esdescription" type="text" id="esdescriptio">
+    </div>
+    <div>
+        <label for="enname">Name:</label>
+        <input ngModel name="enname" type="text" id="enname">
+    </div>
+    <div>
+        <label for="endespription">Description</label>
+        <input ngModel name="endescription" type="text" id="endescriptio">
+    </div>
+    <button onclick="postAnimales">Send</button>
+</form> -->
+
+    <!-- <form #animalForm="ngForm" (ngSubmit)="onSubmit(animalForm)">
+
+       
+        <h2>In Spanish</h2>
+        <p>escription
+            <input
+                #es.name="ngModel"
+                [(ngModel)]="es.name"
+                name="nombre"
+                type="text" 
+                id="esname">
+        </p>
+        <p>definition:
+            <input 
+                #es.definition="ngModel"
+                [(ngModel)]="es.definition"
+                name="description"
+                type="text" id="esdefinition"></p>
+        <h2>
+                In English
+            </h2>
+            <p>name
+            <input
+                #en.name="ngModel"
+                [(ngModel)]="en.name"
+                name="nombre"
+                type="text" 
+                id="enname"></p>
+            <p>definition:
+                <input 
+                #en.definition="ngModel"
+                [(ngModel)]="en.definition"
+                name="description"
+                type="text" id="endefinition"></p>
+
+            <div>
+                <input type="checkbox">Deseo subir los archivos
+            </div>
+            <button >
+                Send
+            </button>
+
+</form>*// -->
+</div>

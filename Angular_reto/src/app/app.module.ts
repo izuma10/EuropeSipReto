@@ -9,7 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioNewComponent } from './formulario-new/formulario-new.component';
 import { datosservice } from './datos.service';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import { ImageUploadModule } from 'angular2-image-upload';
 const routes : Routes = [
   {
     path: '', redirectTo :'home', pathMatch: 'full'
@@ -32,14 +34,17 @@ const routes : Routes = [
     FormularioEditComponent,
     ElementoComponent,
     HomeComponent,
-    FormularioNewComponent
+    FormularioNewComponent,
+    UploadFileComponent
   ],
   imports: [
   BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ImageUploadModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [datosservice],
   bootstrap: [AppComponent]

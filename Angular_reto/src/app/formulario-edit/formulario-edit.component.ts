@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { datosservice } from './../elemento/datos.service';
 import { Animal } from '../Animal.models';
 import { ObsService } from './../obs.service';
 
