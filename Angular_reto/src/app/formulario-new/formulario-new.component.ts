@@ -31,22 +31,20 @@ animalForm = this.fb.group({
     description: ['']
   }),
   });
-
+  postData=JSON.stringify(this.animalForm.value)
   private url= 'http://localhost:3000/animales';
 
-onSubmit(){
+onSubmit(url: any,postData: any){
   console.log(this.animalForm.value);
   console.log(JSON.stringify(this.animalForm.value));
+  this.http.post(url,postData);
   
 }
 
-  postData=JSON.stringify(this.animalForm.value)
+  
 
 
-    postAnimales(url: any,postData: any) {
-       this.http.post(url,postData);
- }
-
+ 
 
 
 

@@ -10,7 +10,7 @@ import { ObsService } from '../obs.service';
 export class ElementoComponent implements OnInit {
   listaDePost : any;
   constructor(private postservice: datosservice,  private observice : ObsService) { }
-
+// Here im connecting the component with server. All wig method get
   ngOnInit() {
     this.postservice.getDatos().subscribe(response => {
       this.listaDePost = response;
