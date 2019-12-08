@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { http } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -17,22 +17,27 @@ export class FormularioNewComponent implements OnInit {
   
   
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
     
 animalForm = this.fb.group({
   id: [''],
   image: [''],
-  esname: [''],
-  esdescription: [''],
-  enname: [''],
-  endescription: ['']
-  })
+  es: this.fb.group({
+    name: [''],
+    description: ['']
+  }),
+  en: this.fb.group({
+    name: [''],
+    description: ['']
+  }),
+  });
 
   private url= 'http://localhost:3000/animales';
 
 onSubmit(){
   console.log(this.animalForm.value);
-  console.log(JSON.stringify(this.animalForm.value))
+  console.log(JSON.stringify(this.animalForm.value));
+  
 }
 
   postData=JSON.stringify(this.animalForm.value)

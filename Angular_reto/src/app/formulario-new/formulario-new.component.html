@@ -2,37 +2,36 @@
     <h1>
         Crearte new word
     </h1>
+    <p>
+        {{animalForm.value}}
+    </p>
     <form [formGroup]="animalForm" (ngSubmit)="onSubmit()" >
-        <div>
             <label >
                 Url image:
             <input formControlName="image" type="text" id="image">
             </label>
-        </div>
-        <div>
             <div>
                 <label >
                     Name:
-                <input formControlName="esname" type="text" id="es.name">
+                <input [formGroup]="es" formControlName="name" type="text" id="name">
                 </label>
             </div>
             <div>
                 <label>
                     Description:
-                <input formControlName="esdescription" type="text" id="esdescription">
+                <input [formGroup]="es" formControlName="description" type="text" id="description">
                 </label>
             </div>
-        </div>
         <div>
             <label>
                 Name:
-            <input formControlName="enname" type="text" id="esname">
+            <input [formGroup]="en" formControlName="name" type="text" id="name">
             </label>
         </div>
         <div>
             <label>
                     Description:
-            <input formControlName="endescription" type="text" id="esdescription">
+            <input [formGroup]="en" formControlName="description" type="text" id="description">
             </label>
         </div>
         <div>
