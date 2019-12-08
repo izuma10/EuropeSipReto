@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { ApiService } from './api.service';
+import { http } from '@angular/common/http';
 
 
 @Injectable({
@@ -13,7 +13,8 @@ import { ApiService } from './api.service';
   styleUrls: ['./formulario-new.component.scss']
 })
 export class FormularioNewComponent implements OnInit {
-  http: any;
+  
+  
   
 
   constructor(private fb: FormBuilder) { }
@@ -38,7 +39,7 @@ onSubmit(){
 
 
     postAnimales(url: any,postData: any) {
-      return this.http.post(url, postData);
+       this.http.post(url,postData);
  }
 
 
