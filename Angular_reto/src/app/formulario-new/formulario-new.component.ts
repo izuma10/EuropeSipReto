@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { datosservice } from 'src/app/datos.service';
 
 
 @Injectable({
@@ -14,65 +15,48 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormularioNewComponent implements OnInit {
   
+  image : string;
+  animalForm: any;
   
   
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient,
+    private _apiservice: datosservice) { 
     
-animalForm = this.fb.group({
+    this.animalForm = this.fb.group({
   id: [''],
   image: [''],
   es: this.fb.group({
     name: [''],
-    description: ['']
+    description: [''],
   }),
   en: this.fb.group({
     name: [''],
-    description: ['']
+    description: [''],
   }),
   });
-  postData=JSON.stringify(this.animalForm.value)
+}
+
+
+
   private url= 'http://localhost:3000/animales';
 
-onSubmit(url: any,postData: any){
+onSubmit(postData: any){
   console.log(this.animalForm.value);
   console.log(JSON.stringify(this.animalForm.value));
-  this.http.post(url,postData);
+  this
+  this.http.post(this.url, postData);
   
 }
 
-  
-
-
  
+
+
+
 
 
 
   ngOnInit() {
     
     }
-//   postData={};
-// private url= 'http://localhost:3000/animales';
-  
-
-  
-  
-//   constructor(private http: HttpClient) { 
-    
-//   }
-
-//   ngOnInit() {
-//   }
-
-//   onSubmit(animalForm){
-//     console.log(JSON.stringify(animalForm.value));
-//    this.postData = JSON.stringify(animalForm.value)
-//   }
-
-
-//   postAnimales(url,postData) {
-//     return this.http.post(url, postData);
-// }
-  
-
-}
+  }

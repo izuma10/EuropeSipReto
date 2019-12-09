@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
+
 // This service bring me all of the dates in de server. This server have atchivo data from db.json//
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ export class datosservice {
   getDatos(){
     return this.http.get(this.url);
   }
-
+  postDatos(animal) {
+    console.log(animal + ' desde postDatos')
+    return this.http.post(this.url, animal)
+  }
 
  
 

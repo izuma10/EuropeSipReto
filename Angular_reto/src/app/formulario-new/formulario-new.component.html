@@ -5,33 +5,35 @@
     <p>
         {{animalForm.value}}
     </p>
-    <form [formGroup]="animalForm" (ngSubmit)="onSubmit()" >
+    <form [formGroup]="animalForm" (ngSubmit)="onSubmit(animalForm.value)" >
+            <label >
+                    id:
+                <input formControlName="id" type="text" id="id">
+            </label>
             <label >
                 Url image:
             <input formControlName="image" type="text" id="image">
             </label>
-            <div>
+            <div formGroupName="es">
                 <label >
                     Name:
-                <input [formGroup]="es" formControlName="name" type="text" id="name">
+                <input  formControlName="name" type="text" id="name">
                 </label>
-            </div>
-            <div>
+           
                 <label>
                     Description:
-                <input [formGroup]="es" formControlName="description" type="text" id="description">
+                <input formControlName="description" type="text" id="description">
                 </label>
             </div>
-        <div>
+        <div formGroupName="en">
             <label>
                 Name:
-            <input [formGroup]="en" formControlName="name" type="text" id="name">
+            <input formControlName="name" type="text" id="name">
             </label>
-        </div>
-        <div>
+        
             <label>
                     Description:
-            <input [formGroup]="en" formControlName="description" type="text" id="description">
+            <input  formControlName="description" type="text" id="description">
             </label>
         </div>
         <div>
@@ -40,72 +42,6 @@
           </form>
 
     
-<!-- <form #animalForm="ngForm" (ngSubmit)="onSubmit(animalForm)">
-    {{ animalForm.value | json }}
-    <div>
-            <label for="image">Url image:</label>
-            <input ngModel name="image" type="text" id="esname">
-        </div>
-    <div>
-        <label for="esname">Name:</label>
-        <input ngModel name="esname" type="text" id="esname">
-    </div>
-    <div>
-        <label for="esdespription">Description</label>
-        <input ngModel name="esdescription" type="text" id="esdescriptio">
-    </div>
-    <div>
-        <label for="enname">Name:</label>
-        <input ngModel name="enname" type="text" id="enname">
-    </div>
-    <div>
-        <label for="endespription">Description</label>
-        <input ngModel name="endescription" type="text" id="endescriptio">
-    </div>
-    <button onclick="postAnimales">Send</button>
-</form> -->
 
-    <!-- <form #animalForm="ngForm" (ngSubmit)="onSubmit(animalForm)">
 
-       
-        <h2>In Spanish</h2>
-        <p>escription
-            <input
-                #es.name="ngModel"
-                [(ngModel)]="es.name"
-                name="nombre"
-                type="text" 
-                id="esname">
-        </p>
-        <p>definition:
-            <input 
-                #es.definition="ngModel"
-                [(ngModel)]="es.definition"
-                name="description"
-                type="text" id="esdefinition"></p>
-        <h2>
-                In English
-            </h2>
-            <p>name
-            <input
-                #en.name="ngModel"
-                [(ngModel)]="en.name"
-                name="nombre"
-                type="text" 
-                id="enname"></p>
-            <p>definition:
-                <input 
-                #en.definition="ngModel"
-                [(ngModel)]="en.definition"
-                name="description"
-                type="text" id="endefinition"></p>
-
-            <div>
-                <input type="checkbox">Deseo subir los archivos
-            </div>
-            <button >
-                Send
-            </button>
-
-</form>*// -->
 </div>
