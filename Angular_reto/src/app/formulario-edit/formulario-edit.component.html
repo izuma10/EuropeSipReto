@@ -3,39 +3,36 @@
         This component have a fonm for edit each animal btoh in ENglish and in Spanish.
         
     -->
-        <form #dataForm="ngForm">
-            <div>
-                <img src={{data.image}} alt="">
-            </div>
-            <div>
-                <div>
-                    <label for="es">In Spanish</label>
-                </div>
-                <div>
-                    <label for="es-name">Name</label>
-                    <input [(ngModel)]="data.es.name" name="es-name" id="es-name" type="text">
-                </div>
-                <div>
-                    <label for="es-definition">Definition</label>
-                    <textarea [(ngModel)]="data.es.definition" name="es-definition" id="es-definition" cols="30" rows="2"></textarea>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label for="en">In English</label>
-                </div>
-                <div>
-                    <label for="en-name">Name</label>
-                    <input [(ngModel)]="data.en.name" name="en-name" id="en-name" type="text">
-                </div>
-                <div>
-                    <label for="en-definition">Definition</label>
-                    <textarea [(ngModel)]="data.en.definition" name="en-definition" id="en-definition" cols="30" rows="2"></textarea>
-                </div>
-            </div>
-            <div>
-                <button (click) = "update()">Guardar</button>
-                <button>Descartar</button>
-            </div>
-        </form>
+    <form [formGroup]="animalForm" (ngSubmit)="update()" >
+        
+        <label >
+            Url image:
+        <input formControlName="image" type="text" id="image">
+        </label>
+        <div formGroupName="es">
+            <label >
+                Name:
+            <input  formControlName="name" type="text" id="name">
+            </label>
+       
+            <label>
+                Definition:
+            <input formControlName="definition" type="text" id="definition">
+            </label>
+        </div>
+    <div formGroupName="en">
+        <label>
+            Name:
+        <input formControlName="name" type="text" id="name">
+        </label>
+    
+        <label>
+            Definition:
+        <input  formControlName="definition" type="text" id="definition">
+        </label>
+    </div>
+    <div>
+        <button  type="submit" >Submit</button>
+    </div>
+      </form>
     </div>

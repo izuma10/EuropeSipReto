@@ -6,7 +6,7 @@
         <img src = "{{ dato.image }}" class="fotos">
         <div class="botones">
             <button class="bizq" [routerLink]="['/formulario',dato.es.name]" (click)="editarAnimal(dato.id)">Edit word</button>
-            <button class="bdrch">Delete word</button>
+            <button class="bdrch" (click)="deleteAnimal(dato)">Delete word</button>
         </div>
     </div>
     <div class="textos">

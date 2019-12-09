@@ -14,45 +14,45 @@ import { datosservice } from 'src/app/datos.service';
   styleUrls: ['./formulario-new.component.scss']
 })
 export class FormularioNewComponent implements OnInit {
-  
-  image : string;
+
+  image: string;
   animalForm: any;
-  
-  
+
+
 
   constructor(private fb: FormBuilder, private http: HttpClient,
-    private _apiservice: datosservice) { 
-    
+    private _apiservice: datosservice) {
+
     this.animalForm = this.fb.group({
-  id: [''],
-  image: [''],
-  es: this.fb.group({
-    name: [''],
-    description: [''],
-  }),
-  en: this.fb.group({
-    name: [''],
-    description: [''],
-  }),
-  });
-}
+      id: [''],
+      image: [''],
+      es: this.fb.group({
+        name: [''],
+        definition: [''],
+      }),
+      en: this.fb.group({
+        name: [''],
+        definition: [''],
+      }),
+    });
+  }
 
 
 
-  private url= 'http://localhost:3000/animales';
+  private url = 'http://localhost:3000/animales';
 
-onSubmit(){
-  console.log(this.animalForm.value);
-  console.log(JSON.stringify(this.animalForm.value));
-  
-  this.http.post(this.url, this.animalForm.value).subscribe(res =>{
-    
+  onSubmit() {
+    console.log(this.animalForm.value);
+    console.log(JSON.stringify(this.animalForm.value));
+
+    this.http.post(this.url, this.animalForm.value).subscribe(res => {
+
       console.log(res)
-    
-  })
-}
 
- 
+    })
+  }
+
+
 
 
 
@@ -60,6 +60,6 @@ onSubmit(){
 
 
   ngOnInit() {
-    
-    }
+
   }
+}

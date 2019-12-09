@@ -1,3 +1,7 @@
+<!--
+    
+-->
+
 <div>
     <h1>
         Crearte new word
@@ -5,43 +9,40 @@
     <p>
         {{animalForm.value}}
     </p>
-    <form [formGroup]="animalForm" (ngSubmit)="onSubmit()" >
-            <label >
-                    id:
-                <input formControlName="id" type="text" id="id">
-            </label>
-            <label >
-                Url image:
+    <form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+        
+        <label>
+            Url image:
             <input formControlName="image" type="text" id="image">
+        </label>
+        <div formGroupName="es">
+            <label>
+                Name:
+                <input formControlName="name" type="text" id="name">
             </label>
-            <div formGroupName="es">
-                <label >
-                    Name:
-                <input  formControlName="name" type="text" id="name">
-                </label>
-           
-                <label>
-                    Description:
-                <input formControlName="description" type="text" id="description">
-                </label>
-            </div>
+
+            <label>
+                Definition:
+                <input formControlName="definition" type="text" id="definition">
+            </label>
+        </div>
         <div formGroupName="en">
             <label>
                 Name:
-            <input formControlName="name" type="text" id="name">
+                <input formControlName="name" type="text" id="name">
             </label>
-        
+
             <label>
-                    Description:
-            <input  formControlName="description" type="text" id="description">
+                Definition:
+                <input formControlName="definition" type="text" id="definition">
             </label>
         </div>
         <div>
-            <button click="postAnimales" type="submit" >Submit</button>
+            <button click="postAnimales" type="submit">Submit</button>
         </div>
-          </form>
+    </form>
 
-    
+
 
 
 </div>

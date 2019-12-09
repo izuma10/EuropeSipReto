@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { datosservice } from './datos.service';
 import { ObsService } from '../obs.service';
+import { datosservice } from '../datos.service';
 
 @Component({
   selector: 'app-elemento',
@@ -22,4 +22,12 @@ export class ElementoComponent implements OnInit {
   editarAnimal(id){
     this.observice.mostrarAnimal(this.listaDePost[id])
   }
+  deleteAnimal(animal) {
+    this.postservice.deleteDatos(animal.id).subscribe(res => {
+      this.listaDePost.splice(this.listaDePost.indexOf(animal),1)
+    },error=>{
+      console.log(error + " "+ animal)
+    })
+  }
+  //DeleteAnimals, only delete the animal in server and delete in front
 }
