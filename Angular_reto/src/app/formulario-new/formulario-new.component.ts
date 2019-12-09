@@ -41,12 +41,15 @@ export class FormularioNewComponent implements OnInit {
 
   private url= 'http://localhost:3000/animales';
 
-onSubmit(postData: any){
+onSubmit(){
   console.log(this.animalForm.value);
   console.log(JSON.stringify(this.animalForm.value));
-  this
-  this.http.post(this.url, postData);
   
+  this.http.post(this.url, this.animalForm.value).subscribe(res =>{
+    
+      console.log(res)
+    
+  })
 }
 
  
