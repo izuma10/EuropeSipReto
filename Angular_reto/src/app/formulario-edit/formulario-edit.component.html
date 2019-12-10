@@ -1,15 +1,21 @@
-<div>
+<div class="formnew">
     <!--
         This component have a fonm for edit each animal btoh in ENglish and in Spanish.
         
     -->
+    
     <form [formGroup]="animalForm" (ngSubmit)="update()" >
-        
-        <label >
+        <h1>
+            Edit your animal
+        </h1>
+        <label  class="url" >
             Url image:
         <input formControlName="image" type="text" id="image">
         </label>
         <div formGroupName="es">
+                <p class="titulo">
+                    Spanish
+                </p>
             <label >
                 Name:
             <input  formControlName="name" type="text" id="name">
@@ -20,7 +26,10 @@
             <input formControlName="definition" type="text" id="definition">
             </label>
         </div>
-    <div formGroupName="en">
+    <div formGroupName="en" class="es">
+            <p class="titulo">
+                English
+            </p>
         <label>
             Name:
         <input formControlName="name" type="text" id="name">
@@ -31,7 +40,7 @@
         <input  formControlName="definition" type="text" id="definition">
         </label>
     </div>
-    <div>
+    <div class="es">
         <button  type="submit" >Submit</button>
     </div>
       </form>

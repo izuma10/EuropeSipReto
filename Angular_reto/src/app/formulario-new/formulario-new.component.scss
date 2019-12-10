@@ -1,3 +1,32 @@
-.class.is-invalid {
-    border-color: red;
+
+@import "~reset-css/sass/reset";
+.formnew{
+    overflow:hidden;
+    text-align: center;
+    animation-name: slidein;
+    animation-duration: 3s;
 }
+h1{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.es{
+    margin-top: 20px;
+}
+.titulo{
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }

@@ -2,20 +2,21 @@
     
 -->
 
-<div>
+<div class="formnew">
     <h1>
         Crearte new word
     </h1>
-    <p>
-        {{animalForm.value}}
-    </p>
+
     <form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
         
-        <label>
+        <label class="url">
             Url image:
             <input formControlName="image" type="text" id="image">
         </label>
-        <div formGroupName="es">
+        <div formGroupName="es" class="es">
+            <p class="titulo">
+                Spanish
+            </p>
             <label>
                 Name:
                 <input formControlName="name" type="text" id="name">
@@ -26,7 +27,10 @@
                 <input formControlName="definition" type="text" id="definition">
             </label>
         </div>
-        <div formGroupName="en">
+        <div formGroupName="en" class="es">
+            <p class="titulo">
+                English
+            </p>
             <label>
                 Name:
                 <input formControlName="name" type="text" id="name">
@@ -37,7 +41,7 @@
                 <input formControlName="definition" type="text" id="definition">
             </label>
         </div>
-        <div>
+        <div class="es">
             <button click="postAnimales" type="submit">Submit</button>
         </div>
     </form>

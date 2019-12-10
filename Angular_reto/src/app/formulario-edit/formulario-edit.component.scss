@@ -1,0 +1,33 @@
+@import "~reset-css/sass/reset";
+
+.formnew{
+    overflow:hidden;
+    text-align: center;
+    animation-name: slidein;
+    animation-duration: 3s;
+}
+
+h1{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.es{
+    margin-top: 20px;
+}
+.titulo{
+    font-weight: bolder;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+@keyframes slidein {
+    from {
+      margin-right: 100%;
+      width: 0%
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 100%;
+    }
+  }
